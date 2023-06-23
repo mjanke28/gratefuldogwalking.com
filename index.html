@@ -412,13 +412,16 @@
                             <input type="hidden" name="_template" value="table">
                             <div class="row g-3">
                                 <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="Your Name" style="height: 55px;" name="name" required>
+                                    <input type="text" class="form-control border-0" placeholder="Name" style="height: 55px;" name="name" required>
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;" name="email" required>
+                                    <input type="email" class="form-control border-0" placeholder="Email" style="height: 55px;" name="email" required>
                                 </div>
                                 <div class="col-12 col-sm-6">
-                                    <input type="tel" class="form-control border-0" placeholder="Your Mobile" style="height: 55px;" name="tel">
+                                    <input type="tel" class="form-control border-0" placeholder="Phone" style="height: 55px;" name="phone">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <input type="text" class="form-control border-0" placeholder="City" style="height: 55px;" name="city" required>
                                 </div>
                                 <!-- <div class="col-12 col-sm-6">
                                     <select class="form-select border-0" style="height: 55px;">
@@ -429,7 +432,7 @@
                                     </select>
                                 </div> -->
                                 <div class="col-12">
-                                    <textarea class="form-control border-0" placeholder="Message"></textarea>
+                                    <textarea type="text" class="form-control border-0" placeholder="Message" style="height: 100px;" name="message"></textarea>
                                 </div>
                                 <div class="col-12">
                                     <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
@@ -527,7 +530,7 @@
 
 
     <!-- Testimonial Start -->
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s" id="testomonial">
         <div class="container py-5">
             <div class="text-center">
                 <h6 class="text-secondary text-uppercase">Testimonials</h6>
@@ -619,9 +622,11 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Quick Links</h4>
+                    <a class="btn btn-link" href="index.html">Home</a>
                     <a class="btn btn-link" href="#about">About Us</a>
                     <a class="btn btn-link" href="#service">Our Services</a>
                     <a class="btn btn-link" href="#quote">Contact Us</a>
+                    <a class="btn btn-link" href="#testomonial">Testomonials</a>
                     <!-- <h4 class="text-light mb-4">Newsletter</h4>
                     <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
                     <div class="position-relative mx-auto" style="max-width: 400px;">
