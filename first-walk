@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grateful Dog Walking | First Walk Free</title>
+
+<style>
+body {
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#f8f5ef;
+  color:#2b2b2b;
+}
+
+.container {
+  width:90%;
+  max-width:900px;
+  margin:auto;
+  text-align:center;
+}
+
+.hero {
+  background:url(img/carousel-1.jpg) center/cover no-repeat;
+  padding:80px 20px;
+  color:white;
+  position:relative;
+}
+
+.hero::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.5);
+}
+
+.hero-content {
+  position:relative;
+  z-index:2;
+}
+
+h1 {
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+.badge {
+  background:#7bb661;
+  padding:8px 16px;
+  border-radius:20px;
+  display:inline-block;
+  margin-bottom:20px;
+  font-weight:bold;
+}
+
+.btn {
+  display:inline-block;
+  background:#7bb661;
+  color:white;
+  padding:14px 24px;
+  border-radius:30px;
+  text-decoration:none;
+  margin-top:15px;
+  font-weight:bold;
+}
+
+.section {
+  padding:50px 20px;
+}
+
+.card {
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  margin:15px 0;
+}
+
+img.profile {
+  width:100%;
+  border-radius:12px;
+}
+
+form {
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+input, textarea, select {
+  padding:12px;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+
+button {
+  background:#7bb661;
+  color:white;
+  padding:14px;
+  border:none;
+  border-radius:30px;
+  font-weight:bold;
+}
+
+.footer {
+  background:#222;
+  color:white;
+  padding:20px;
+  font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content container">
+    <h1>Come home to a calm, happy dog</h1>
+    <div class="badge">First Walk FREE</div>
+    <p>Reliable dog walking for busy owners in South Orange County</p>
+    <a href="#form" class="btn">Book Your First Walk</a>
+  </div>
+</div>
+
+<!-- TRUST -->
+<div class="section container">
+  <h2>Why owners choose Grateful Dog Walking</h2>
+
+  <div class="card">Structured, reliable walks</div>
+  <div class="card">Direct communication</div>
+  <div class="card">Local and trustworthy</div>
+</div>
+
+<!-- ABOUT YOU -->
+<div class="section container">
+  <img src="img/my-photo.png" class="profile">
+  <h2>Hi, I’m Matt</h2>
+  <p>
+    I help busy dog owners make sure their dogs are actually exercised and cared for,
+    not just let out quickly. Simple, reliable, and personal.
+  </p>
+</div>
+
+<!-- PRICING -->
+<div class="section container">
+  <h2>Dog Walking Options</h2>
+
+  <div class="card">
+    <strong>30 Minutes – $30</strong>
+  </div>
+
+  <div class="card">
+    <strong>45 Minutes – $40</strong>
+  </div>
+
+  <div class="card">
+    <strong>60 Minutes – $50</strong>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="section container">
+  <h2>Claim your first walk free</h2>
+  <p>Fill this out and I’ll reach out to get you scheduled.</p>
+</div>
+
+<!-- FORM -->
+<div id="form" class="section container">
+
+<form action="https://formsubmit.co/gratefuldogwalking1@gmail.com" method="POST">
+
+<input type="hidden" name="_subject" value="New Dog Walking Lead">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="https://www.gratefuldogwalking.com/thank-you">
+
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="tel" name="phone" placeholder="Phone Number" required>
+
+<select name="city" required>
+<option value="">Select Your City</option>
+<option>Dana Point</option>
+<option>Laguna Niguel</option>
+<option>San Clemente</option>
+<option>San Juan Capistrano</option>
+</select>
+
+<textarea name="dog" placeholder="Tell me about your dog"></textarea>
+
+<button type="submit">Claim My Free Walk</button>
+
+</form>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  Serving Dana Point, Laguna Niguel, San Clemente, San Juan Capistrano<br>
+  Call or Text: 979-541-9948
+</div>
+
+</body>
+</html>
