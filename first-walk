@@ -1,202 +1,502 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grateful Dog Walking | First Walk Free</title>
+    <meta charset="utf-8">
+    <title>First Walk Free | Grateful Dog Walking</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Claim your first walk free with Grateful Dog Walking." name="description">
 
-<style>
-body {
-  margin:0;
-  font-family: Arial, sans-serif;
-  background:#f8f5ef;
-  color:#2b2b2b;
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        .landing-wrap {
+            background: linear-gradient(180deg, #f8f2f0 0%, #ffffff 100%);
+            min-height: 100vh;
+            padding: 40px 0 60px;
+        }
+
+        .landing-shell {
+            border-radius: 28px;
+            padding: 36px 32px 48px;
+        }
+
+        .landing-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 34px;
+        }
+
+        .brand-paw {
+            width: 18px;
+            height: 18px;
+            background: var(--primary);
+            border-radius: 50% 50% 45% 45%;
+            position: relative;
+            transform: rotate(45deg);
+            flex: 0 0 18px;
+        }
+
+        .brand-paw::before,
+        .brand-paw::after {
+            content: "";
+            position: absolute;
+            background: var(--primary);
+            border-radius: 50%;
+        }
+
+        .brand-paw::before {
+            width: 8px;
+            height: 8px;
+            top: -8px;
+            left: 0;
+        }
+
+        .brand-paw::after {
+            width: 8px;
+            height: 8px;
+            top: 0;
+            left: -8px;
+        }
+
+        .brand-text {
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: .02em;
+            color: var(--dark);
+            text-transform: uppercase;
+        }
+
+        .hero-grid {
+            align-items: center;
+        }
+
+        .left-copy {
+            padding-right: 30px;
+        }
+
+        .eyebrow-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid rgba(81, 207, 237, .35);
+            background: #ffffff;
+            color: var(--secondary);
+            border-radius: 999px;
+            padding: 10px 16px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, .04);
+        }
+
+        .eyebrow-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--secondary);
+            flex: 0 0 12px;
+        }
+
+        .landing-title {
+            font-size: clamp(2.5rem, 5vw, 5rem);
+            line-height: 1.02;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 24px;
+            max-width: 620px;
+        }
+
+        .landing-subtext {
+            font-size: 1.35rem;
+            line-height: 1.35;
+            color: rgba(6, 3, 21, .82);
+            max-width: 520px;
+            margin-bottom: 28px;
+        }
+
+        .trust-list {
+            display: grid;
+            gap: 14px;
+            margin-bottom: 34px;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: var(--dark);
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+
+        .trust-check {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            font-weight: 700;
+            flex: 0 0 28px;
+            box-shadow: 0 8px 18px rgba(255, 62, 65, .25);
+        }
+
+        .hero-cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .hero-cta-row .btn {
+            min-height: 60px;
+            border-radius: 999px;
+            padding-left: 28px;
+            padding-right: 28px;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .hero-cta-row .btn-light {
+            background: #fff;
+            border: 1px solid rgba(6, 3, 21, .10);
+            color: var(--dark);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .05);
+        }
+
+        .hero-cta-row .btn-light:hover {
+            color: var(--primary);
+            border-color: rgba(255, 62, 65, .25);
+        }
+
+        .form-panel-wrap {
+            position: relative;
+        }
+
+        .form-panel {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 26px;
+            box-shadow: 0 0 45px rgba(0, 0, 0, .07);
+            border: 1px solid rgba(6, 3, 21, .04);
+        }
+
+        .form-top-pill {
+            display: inline-block;
+            background: rgba(81, 207, 237, .28);
+            color: var(--dark);
+            padding: 10px 16px;
+            border-radius: 12px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .form-title {
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            line-height: 1.05;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 22px;
+        }
+
+        .form-layout {
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 0;
+            align-items: stretch;
+        }
+
+        .form-fields {
+            display: grid;
+            gap: 14px;
+            padding-right: 14px;
+        }
+
+        .form-photo-box {
+            border-radius: 24px;
+            overflow: hidden;
+            min-height: 100%;
+            background: #f3f3f3;
+            display: flex;
+            align-items: stretch;
+        }
+
+        .form-photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .form-panel .form-control,
+        .form-panel .form-select {
+            min-height: 64px;
+            border-radius: 999px;
+            border: 1px solid rgba(6, 3, 21, .08);
+            background: #ffffff;
+            padding-left: 22px;
+            padding-right: 22px;
+            font-size: 1.05rem;
+            color: var(--dark);
+            box-shadow: none;
+        }
+
+        .form-panel textarea.form-control {
+            min-height: 118px;
+            border-radius: 24px;
+            padding-top: 18px;
+            resize: none;
+        }
+
+        .form-panel .form-control:focus,
+        .form-panel .form-select:focus {
+            border-color: rgba(81, 207, 237, .7);
+            box-shadow: 0 0 0 0.2rem rgba(81, 207, 237, .18);
+        }
+
+        .form-submit-wrap {
+            margin-top: 18px;
+        }
+
+        .form-submit-wrap .btn {
+            min-height: 66px;
+            border-radius: 999px;
+            font-size: 1.25rem;
+            font-weight: 800;
+            box-shadow: 0 14px 26px rgba(255, 62, 65, .22);
+        }
+
+        .form-footer {
+            margin-top: 18px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(6, 3, 21, .08);
+            font-size: 1.15rem;
+            color: rgba(6, 3, 21, .85);
+        }
+
+        .form-footer a {
+            font-weight: 700;
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        @media (max-width: 1199.98px) {
+            .landing-title {
+                max-width: 100%;
+            }
+
+            .landing-subtext {
+                font-size: 1.18rem;
+            }
+
+            .trust-item {
+                font-size: 1.05rem;
+            }
+
+            .form-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            .landing-wrap {
+                padding: 24px 0 40px;
+            }
+
+            .landing-shell {
+                padding: 20px 8px 24px;
+            }
+
+            .left-copy {
+                padding-right: 0;
+                margin-bottom: 32px;
+            }
+
+            .form-layout {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .form-fields {
+                padding-right: 0;
+            }
+
+            .form-photo-box {
+                min-height: 260px;
+                max-height: 360px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .landing-title {
+                font-size: 2.45rem;
+            }
+
+            .landing-subtext {
+                font-size: 1.05rem;
+            }
+
+            .hero-cta-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero-cta-row .btn {
+                width: 100%;
+            }
+
+            .form-panel {
+                padding: 18px;
+                border-radius: 22px;
+            }
+
+            .form-title {
+                font-size: 1.75rem;
+            }
+
+            .form-footer {
+                font-size: 1rem;
+            }
+
+            .landing-wrap {
+    position: relative;
+    overflow: hidden;
 }
 
-.container {
-  width:90%;
-  max-width:900px;
-  margin:auto;
-  text-align:center;
+/* LEFT dot pattern */
+.landing-wrap::before {
+    content: "";
+    position: absolute;
+    top: 120px;
+    left: -80px;
+    width: 300px;
+    height: 300px;
+
+    background-image: radial-gradient(rgba(81, 207, 237, 0.25) 2px, transparent 2px);
+    background-size: 18px 18px;
+
+    opacity: 0.6;
+    pointer-events: none;
 }
 
-.hero {
-  background:url(img/carousel-1.jpg) center/cover no-repeat;
-  padding:80px 20px;
-  color:white;
-  position:relative;
-}
+/* RIGHT dot pattern */
+.landing-wrap::after {
+    content: "";
+    position: absolute;
+    bottom: 80px;
+    right: -100px;
+    width: 320px;
+    height: 320px;
 
-.hero::after {
-  content:"";
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.5);
-}
+    background-image: radial-gradient(rgba(255, 62, 65, 0.18) 2px, transparent 2px);
+    background-size: 20px 20px;
 
-.hero-content {
-  position:relative;
-  z-index:2;
+    opacity: 0.6;
+    pointer-events: none;
 }
-
-h1 {
-  font-size:42px;
-  margin-bottom:10px;
-}
-
-.badge {
-  background:#7bb661;
-  padding:8px 16px;
-  border-radius:20px;
-  display:inline-block;
-  margin-bottom:20px;
-  font-weight:bold;
-}
-
-.btn {
-  display:inline-block;
-  background:#7bb661;
-  color:white;
-  padding:14px 24px;
-  border-radius:30px;
-  text-decoration:none;
-  margin-top:15px;
-  font-weight:bold;
-}
-
-.section {
-  padding:50px 20px;
-}
-
-.card {
-  background:white;
-  padding:20px;
-  border-radius:12px;
-  margin:15px 0;
-}
-
-img.profile {
-  width:100%;
-  border-radius:12px;
-}
-
-form {
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-}
-
-input, textarea, select {
-  padding:12px;
-  border-radius:8px;
-  border:1px solid #ccc;
-}
-
-button {
-  background:#7bb661;
-  color:white;
-  padding:14px;
-  border:none;
-  border-radius:30px;
-  font-weight:bold;
-}
-
-.footer {
-  background:#222;
-  color:white;
-  padding:20px;
-  font-size:14px;
-}
-</style>
+        }
+    </style>
 </head>
 
 <body>
+    <div class="container-fluid landing-wrap">
+        <div class="container landing-shell">
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-content container">
-    <h1>Come home to a calm, happy dog</h1>
-    <div class="badge">First Walk FREE</div>
-    <p>Reliable dog walking for busy owners in South Orange County</p>
-    <a href="#form" class="btn">Book Your First Walk</a>
-  </div>
-</div>
+            <div class="landing-brand">
+                <span class="brand-paw"></span>
+                <span class="brand-text">Grateful Dog Walking</span>
+            </div>
 
-<!-- TRUST -->
-<div class="section container">
-  <h2>Why owners choose Grateful Dog Walking</h2>
+            <div class="row g-5 hero-grid">
+                <div class="col-lg-6">
+                    <div class="left-copy">
+                        <div class="eyebrow-pill">
+                            <span class="eyebrow-dot"></span>
+                            First Walk Free
+                        </div>
 
-  <div class="card">Structured, reliable walks</div>
-  <div class="card">Direct communication</div>
-  <div class="card">Local and trustworthy</div>
-</div>
+                        <h1 class="landing-title">Come home to a calm, happy dog</h1>
 
-<!-- ABOUT YOU -->
-<div class="section container">
-  <img src="img/my-photo.png" class="profile">
-  <h2>Hi, I’m Matt</h2>
-  <p>
-    I help busy dog owners make sure their dogs are actually exercised and cared for,
-    not just let out quickly. Simple, reliable, and personal.
-  </p>
-</div>
+                        <p class="landing-subtext">
+                            Reliable dog walking for busy owners in South Orange County.
+                        </p>
 
-<!-- PRICING -->
-<div class="section container">
-  <h2>Dog Walking Options</h2>
+                        <div class="trust-list">
+                            <div class="trust-item">
+                                <span class="trust-check">✓</span>
+                                <span>Local and reliable</span>
+                            </div>
+                            <div class="trust-item">
+                                <span class="trust-check">✓</span>
+                                <span>Simple scheduling</span>
+                            </div>
+                            <div class="trust-item">
+                                <span class="trust-check">✓</span>
+                                <span>Personal care you can trust</span>
+                            </div>
+                        </div>
 
-  <div class="card">
-    <strong>30 Minutes – $30</strong>
-  </div>
+                        <div class="hero-cta-row">
+                            <a href="#lead-form" class="btn btn-primary">Claim Your First Walk</a>
+                            <a href="tel:9795419948" class="btn btn-light">Call or text now</a>
+                        </div>
+                    </div>
+                </div>
 
-  <div class="card">
-    <strong>45 Minutes – $40</strong>
-  </div>
+                <div class="col-lg-6">
+                    <div class="form-panel-wrap" id="lead-form">
+                        <div class="form-panel">
+                            <div class="form-top-pill">First Walk Free</div>
+                            <h2 class="form-title">Claim Your First Walk Free</h2>
 
-  <div class="card">
-    <strong>60 Minutes – $50</strong>
-  </div>
-</div>
+                            <form action="https://formsubmit.co/gratefuldogwalking1@gmail.com" method="POST">
+                                <input type="hidden" name="_next" value="https://www.gratefuldogwalking.com/thanks.html">
+                                <input type="hidden" name="_subject" value="New First Walk Lead!">
+                                <input type="hidden" name="_template" value="table">
+                                <input type="hidden" name="_captcha" value="false">
 
-<!-- CTA -->
-<div class="section container">
-  <h2>Claim your first walk free</h2>
-  <p>Fill this out and I’ll reach out to get you scheduled.</p>
-</div>
+                                <div class="form-layout">
+                                    <div class="form-fields">
+                                        <input type="text" class="form-control" placeholder="Name" name="name" required>
+                                        <input type="tel" class="form-control" placeholder="Phone" name="phone" required>
 
-<!-- FORM -->
-<div id="form" class="section container">
+                                        <select class="form-select" name="city" required>
+                                            <option value="" selected disabled>Select Your City</option>
+                                            <option value="Dana Point">Dana Point</option>
+                                            <option value="Laguna Niguel">Laguna Niguel</option>
+                                            <option value="San Clemente">San Clemente</option>
+                                            <option value="San Juan Capistrano">San Juan Capistrano</option>
+                                        </select>
 
-<form action="https://formsubmit.co/gratefuldogwalking1@gmail.com" method="POST">
+                                        <textarea class="form-control" placeholder="Dog Info" name="message"></textarea>
+                                    </div>
 
-<input type="hidden" name="_subject" value="New Dog Walking Lead">
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_next" value="https://www.gratefuldogwalking.com/thank-you">
+                                    <div class="form-photo-box">
+                                        <img src="img/my-photo.png" alt="Matt from Grateful Dog Walking">
+                                    </div>
+                                </div>
 
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="tel" name="phone" placeholder="Phone Number" required>
+                                <div class="form-submit-wrap">
+                                    <button class="btn btn-primary w-100" type="submit">Claim My Free Walk</button>
+                                </div>
+                            </form>
 
-<select name="city" required>
-<option value="">Select Your City</option>
-<option>Dana Point</option>
-<option>Laguna Niguel</option>
-<option>San Clemente</option>
-<option>San Juan Capistrano</option>
-</select>
+                            <div class="form-footer">
+                                Have a question? Call or text:
+                                <a href="tel:9795419948">979-541-9948</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<textarea name="dog" placeholder="Tell me about your dog"></textarea>
-
-<button type="submit">Claim My Free Walk</button>
-
-</form>
-
-</div>
-
-<!-- FOOTER -->
-<div class="footer">
-  Serving Dana Point, Laguna Niguel, San Clemente, San Juan Capistrano<br>
-  Call or Text: 979-541-9948
-</div>
-
+        </div>
+    </div>
 </body>
+
 </html>
